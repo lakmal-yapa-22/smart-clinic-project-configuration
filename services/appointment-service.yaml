@@ -1,11 +1,13 @@
-server:
-  port: 8081
-
 spring:
   data:
     mongodb:
       uri: mongodb://root:ZH7uEz-fO0gKh6yEm8BaGO988PmaRQn_8B7mGsW1bvVc7BsW@d6c8c31c-931c-423f-a0a4-c4fbe10d158b.asia-southeast1.firestore.goog:443/db-smart-clinic?loadBalanced=true&tls=true&authMechanism=SCRAM-SHA-256&retryWrites=false
+server:
+  port: 0 # Load balancing සඳහා random port එකක් පාවිච්චි කරයි
 
 eureka:
   instance:
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+
+
+
